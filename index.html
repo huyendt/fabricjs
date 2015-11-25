@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="fabric.js"></script>        
+        <script type="text/javascript" src="app.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="app.css">
+    </head>
+    <body>  
+        <div id="canvas-wrapper">
+            <canvas id="myCanvas" height="500px" width="500px" style="border:1px solid black"></canvas>
+        </div>
+        <div id="command"> 
+            <button id='btn-del'>Delete</button>     
+            <button id='btn-clear'>Clear</button>
+            <button id='btn-to-svg'>To SVG</button>
+            <button id='btn-to-json'>To JSON</button>
+                  
+            <div id="bg-color-container">
+                Background Color
+                <select id="bg-color">
+                    <option value="white">White</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="purple">Purple</option>
+                </select> 
+            </div>   
+            
+            <div id="shape-container">
+                <button id='btn-line'>Line</button>
+                <button id='btn-rect'>Rectangle</button>
+                <button id='btn-circle'>Circle</button>                
+                <button id='btn-triangle'>Triangle</button>                                          
+            </div>
+       
+            <div id="text">                
+                Enter text 
+                <input type="text" id="input-text" name="input-text">
+                Text Color
+                <select id="text-color">
+                    <option value="black">Black</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="purple">Purple</option>
+                </select> 
+            </div>   
+            
+            <div id="image-container">
+                <ul id='image-list'>
+                    <li>
+                        <img src="images/printio.png">
+                    </li>   
+                    <li>                    
+                        <img src="images/1.png">                        
+                    </li>
+                    <li>
+                        <img src="images/2.png">
+                    </li>
+                    <li>
+                        <img src="images/3.png">
+                    </li>
+                    <li>
+                        <img src="images/4.png">
+                    </li>   
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        
+        <div id="controls">
+          <h3>Filters:</h3>
+          <p>
+            <label><span>Grayscale:</span> <input id="grayscale" type="checkbox"></label>
+          </p>
+          <p>
+            <label><span>Invert:</span> <input id="invert" type="checkbox"></label>
+          </p>
+          <p>
+            <label><span>Sepia:</span> <input id="sepia" type="checkbox"></label>
+          </p>
+          <p>
+            <label><span>Sepia2:</span> <input id="sepia2" type="checkbox"></label>
+          </p>
+          <p>
+            <label><span>Remove white:</span> <input id="remove-white" type="checkbox"></label>
+            <br>
+            <label>Threshold: <input id="remove-white-threshold" value="60" min="0" max="255" type="range"></label>
+            <br>
+            <label>Distance: <input id="remove-white-distance" value="10" min="0" max="255" type="range"></label>
+          </p>
+          <p>
+            <label><span>Brightness:</span> <input id="brightness" type="checkbox"></label>
+            <br>
+            <label>Value: <input id="brightness-value" value="100" min="0" max="255" type="range"></label>
+          </p>
+          <p>
+            <label><span>Noise:</span> <input id="noise" type="checkbox"></label>
+            <br>
+            <label>Value: <input id="noise-value" value="100" min="0" max="1000" type="range"></label>
+          </p>
+          <p>
+            <label><span>GradientTransparency:</span> <input id="gradient-transparency" type="checkbox"></label>
+            <br>
+            <label>Value: <input id="gradient-transparency-value" value="100" min="0" max="255" type="range"></label>
+          </p>
+          <p>
+            <label><span>Pixelate</span> <input id="pixelate" type="checkbox"></label>
+            <br>
+            <label>Value: <input id="pixelate-value" value="4" min="2" max="20" type="range"></label>
+          </p>
+          <p>
+            <label><span>Blur:</span> <input id="blur" type="checkbox"></label>
+          </p>
+          <p>
+            <label><span>Sharpen:</span> <input id="sharpen" type="checkbox"></label>
+          </p>
+          <p>
+            <label><span>Emboss:</span> <input id="emboss" type="checkbox"></label>
+          </p>
+          <p>
+            <label><span>Tint:</span> <input id="tint" type="checkbox"></label><br>
+            <label>Color: <input id="tint-color" value="" type="color"></label><br>
+            <label>Opacity: <input id="tint-opacity" min="0" max="1" value="1" step="0.1" type="range"></label><br>
+          </p>
+          <p>
+            <label><span>Multiply:</span> <input id="multiply" type="checkbox"></label><br>
+            <label>Color: <input id="multiply-color" value="" type="color"></label><br>
+          </p>
+          <p>
+          <label><span>Blend:</span> <input id="blend" type="checkbox"></label>
+          <br>
+          <label>Mode:</label>
+            <select id="blend-mode" name="blend-mode">
+              <option selected="" value="add">Add</option>
+              <option value="diff">Diff</option>
+              <option value="subtract">Subtract</option>
+              <option value="multiply">Multiply</option>
+              <option value="screen">Screen</option>
+              <option value="lighten">Lighten</option>
+              <option value="darken">Darken</option>
+            </select>
+            <br>
+            <label>Color: <input id="blend-color" value="#00f900" type="color"></label><br>
+          </p>
+        </div>
+        
+        <div id="svg-render">            
+        </div>
+        
+        <div id="canvas-render">           
+            <canvas id="myCanvasRender" height="500px" width="500px" style="border:1px solid black"></canvas>
+        </div>
+        
+        
+    </body>
+</html>

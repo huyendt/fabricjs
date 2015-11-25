@@ -1,0 +1,38 @@
+#canvas-wrapper {
+    position: relative;
+    width: 600px;
+    float: left;
+}
+
+#command {
+    float: left        
+}
+
+#controls {
+    display: inline-block;
+    background: #FAFAFA none repeat scroll 0% 0%;
+    margin-left: 10px;
+    padding: 15px;
+    border-left: 1px dotted #AAA;
+}
+
+#canvas-render {
+    position: relative;
+    width: 600px;   
+    float: left;    
+}
+
+#svg-render {
+    position: relative;
+    width: 500px;   
+    height: 500px;
+    float: left;
+    border: 1px solid black;
+    
+}
+
+
+ul {
+    list-style: outside none none;
+    display: inline-block;
+}
